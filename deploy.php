@@ -1,7 +1,7 @@
 <?php
 namespace Deployer;
 require 'recipe/common.php';
-require 'vendor/deployer/recipes/recipe/rsync.php';
+require 'vendor/deployer/recipes/recipe/npm.php';
 
 // Configuration
 
@@ -18,23 +18,7 @@ set('writable_dirs', []);
 server('production', '107.170.63.66')
     ->user('root')
     ->identityFile()
-    ->set('deploy_path', '/var/www/html/michael.php')
-    ->set('rsync',[
-        'exclude'      => [
-            '.git',
-            'deploy.php',
-        ],
-        'exclude-file' => false,
-        'include'      => [],
-        'include-file' => false,
-        'filter'       => [],
-        'filter-file'  => false,
-        'filter-perdir'=> false,
-        'flags'        => 'rz', // Recursive, with compress
-        'options'      => ['delete'],
-        'timeout'      => 60,
-    ]);
-
+    ->set('deploy_path', '/var/www/html/michael.php');
 
 
 // Run tests
@@ -43,6 +27,8 @@ desc('Tests project calculator');
 task('local:phpunit', function () {
     runLocally("php bin/phpunit");
 });
+
+after('deploy:update_code', 'npm:install');
 
 // Tasks
 desc('Deploy your project');
@@ -62,9 +48,4 @@ task('deploy', [
     'success'
 ]);
 
-task('test', function () {
-    writeln('Hello world');
-});
-
-// [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
