@@ -7,7 +7,7 @@ require 'recipe/common.php';
 set('ssh_type', 'native');
 set('ssh_multiplexing', true);
 
-set('repository', 'git@domain.com:username/repository.git');
+set('repository', 'git@github.com:michaeldouglas/confphprs-calculator.git');
 set('shared_files', []);
 set('shared_dirs', []);
 set('writable_dirs', []);
@@ -17,7 +17,7 @@ set('writable_dirs', []);
 server('production', '107.170.63.66')
     ->user('root')
     ->identityFile()
-    ->set('deploy_path', '/var/www/html/michael.php/public');
+    ->set('deploy_path', '/var/www/html/michael.php');
 
 
 // Tasks
@@ -28,7 +28,7 @@ task('php-fpm:restart', function () {
     // /etc/sudoers: username ALL=NOPASSWD:/bin/systemctl restart php-fpm.service
     run('sudo systemctl restart php-fpm.service');
 });
-after('deploy:symlink', 'php-fpm:restart');
+//after('deploy:symlink');
 
 desc('Deploy your project');
 task('deploy', [
