@@ -2,6 +2,7 @@
 namespace Deployer;
 require 'recipe/common.php';
 require 'vendor/deployer/recipes/recipe/npm.php';
+require 'vendor/deployer/recipes/recipe/rollbar.php';
 
 // Configuration
 
@@ -18,8 +19,12 @@ set('writable_dirs', []);
 server('production', '107.170.63.66')
     ->user('root')
     ->identityFile()
-    ->set('deploy_path', '/var/www/html/michael.php');
+    ->set('deploy_path', '/var/www/html/michael.php')->stage('prod');
 
+set('rollbar', [
+    'access_token' => "a5a20d133b60417d91f225bdcbd78bb8",
+    'rollbar_username' => 'michaeldouglas010790@gmail.com'
+]);
 
 // Run tests
 desc('Tests project calculator');
@@ -48,4 +53,6 @@ task('deploy', [
     'success'
 ]);
 
+
 after('deploy:failed', 'deploy:unlock');
+after('deploy', 'deploy:rollbar');
