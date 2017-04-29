@@ -21,9 +21,10 @@ server('production', '107.170.63.66')
     ->identityFile()
     ->set('deploy_path', '/var/www/html/michael.php')->stage('prod');
 
+set('default_stage', 'prod');
+
 set('rollbar', [
-    'access_token' => "a5a20d133b60417d91f225bdcbd78bb8",
-    'rollbar_username' => 'michaeldouglas010790@gmail.com'
+    'access_token' => "a5a20d133b60417d91f225bdcbd78bb8"
 ]);
 
 // Run tests

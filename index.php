@@ -1,3 +1,3 @@
 <?php
 
-ech  'Teste'
+echo  'Teste Michael';
