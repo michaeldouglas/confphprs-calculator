@@ -11,6 +11,13 @@ set('repository', 'git@github.com:michaeldouglas/confphprs-calculator.git');
 set('shared_files', []);
 set('shared_dirs', []);
 set('writable_dirs', []);
+add('rsync', [
+    'exclude' => [
+        '.git',
+        'deploy.php',
+        'node_modules',
+    ],
+]);
 
 // Servers
 
@@ -20,18 +27,18 @@ server('production', '107.170.63.66')
     ->set('deploy_path', '/var/www/html/michael.php');
 
 
-// Tasks
 
-desc('Restart PHP-FPM service');
-task('php-fpm:restart', function () {
-    // The user must have rights for restart service
-    // /etc/sudoers: username ALL=NOPASSWD:/bin/systemctl restart php-fpm.service
-    run('sudo systemctl restart php-fpm.service');
+// Run tests
+desc('Tests project calculator');
+
+task('local:phpunit', function () {
+    runLocally("php bin/phpunit");
 });
-//after('deploy:symlink');
 
+// Tasks
 desc('Deploy your project');
 task('deploy', [
+    'local:phpunit',
     'deploy:prepare',
     'deploy:lock',
     'deploy:release',
