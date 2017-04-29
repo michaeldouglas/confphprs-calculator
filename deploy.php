@@ -1,6 +1,7 @@
 <?php
 namespace Deployer;
 require 'recipe/common.php';
+require 'vendor/deployer/recipes/recipe/rsync.php';
 
 // Configuration
 

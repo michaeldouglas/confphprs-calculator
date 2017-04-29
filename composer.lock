@@ -4,9 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cbdfa60eab6f9a83c8eb9cc047c4109",
+    "content-hash": "fe3804a6f086429ea29a3e7c2368d717",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "deployer/recipes",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deployphp/recipes.git",
+                "reference": "34cf6eb73b01a09651b9684e5604f57f8b993b15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deployphp/recipes/zipball/34cf6eb73b01a09651b9684e5604f57f8b993b15",
+                "reference": "34cf6eb73b01a09651b9684e5604f57f8b993b15",
+                "shasum": ""
+            },
+            "replace": {
+                "deployer/recipes": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Medvedev",
+                    "email": "anton@medv.io"
+                }
+            ],
+            "description": "3rd party deployer recipes",
+            "homepage": "https://github.com/deployphp/recipes",
+            "keywords": [
+                "cachetool",
+                "cloudflare",
+                "deploy",
+                "deployer",
+                "deployment",
+                "hipchat",
+                "newrelic",
+                "rabbit",
+                "recipes",
+                "sentry",
+                "slack",
+                "yarn"
+            ],
+            "time": "2017-04-23T16:38:35+00:00"
+        },
         {
             "name": "phpunit/php-code-coverage",
             "version": "2.0.x-dev",
@@ -67,7 +118,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-25T12:54:30+00:00"
+            "time": "2015-05-25 12:54:30"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -202,7 +253,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2017-03-07T15:42:04+00:00"
+            "time": "2017-03-07 15:42:04"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -251,7 +302,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-03-07T08:21:50+00:00"
+            "time": "2017-03-07 08:21:50"
         },
         {
             "name": "phpunit/phpunit",
@@ -324,7 +375,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-02-09T06:32:56+00:00"
+            "time": "2015-02-09 06:32:56"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -381,7 +432,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-06-12T07:19:48+00:00"
+            "time": "2014-06-12 07:19:48"
         },
         {
             "name": "sebastian/diff",
@@ -433,7 +484,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2017-03-07T07:26:53+00:00"
+            "time": "2017-03-07 07:26:53"
         },
         {
             "name": "sebastian/environment",
@@ -483,7 +534,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2017-02-28T08:18:59+00:00"
+            "time": "2017-02-28 08:18:59"
         },
         {
             "name": "sebastian/exporter",
@@ -632,12 +683,14 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-12T14:07:15+00:00"
+            "time": "2017-04-12 14:07:15"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "deployer/recipes": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

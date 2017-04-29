@@ -6,7 +6,8 @@
     "php": ">=5.5.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "4.0.*"
+    "phpunit/phpunit": "4.0.*",
+    "deployer/recipes": "dev-master"
   },
   "autoload": {
     "psr-4":{
