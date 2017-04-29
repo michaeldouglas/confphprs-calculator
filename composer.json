@@ -3,7 +3,8 @@
   "description": "Contém os exemplos da palestra para a confrencia php rio grande do sul - PHPUnit",
   "keywords": ["palestra", "confphprs"],
   "require": {
-    "php": ">=5.5.0"
+    "php": ">=5.5.0",
+    "rollbar/rollbar": "~0.18.2"
   },
   "require-dev": {
     "phpunit/phpunit": "4.0.*",

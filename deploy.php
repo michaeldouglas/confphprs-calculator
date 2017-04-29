@@ -3,6 +3,7 @@ namespace Deployer;
 require 'recipe/common.php';
 require 'vendor/deployer/recipes/recipe/npm.php';
 require 'vendor/deployer/recipes/recipe/rollbar.php';
+require 'vendor/deployer/recipes/recipe/slack.php';
 
 // Configuration
 
@@ -23,8 +24,15 @@ server('production', '107.170.63.66')
 
 set('default_stage', 'prod');
 
+// Notices
 set('rollbar', [
     'access_token' => "a5a20d133b60417d91f225bdcbd78bb8"
+]);
+
+set('slack', [
+    'token' => 'xoxp-...',
+    'team'  => 'team name',
+    'app'   => 'app name',
 ]);
 
 // Run tests
