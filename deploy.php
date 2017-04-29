@@ -12,20 +12,28 @@ set('repository', 'git@github.com:michaeldouglas/confphprs-calculator.git');
 set('shared_files', []);
 set('shared_dirs', []);
 set('writable_dirs', []);
-add('rsync', [
-    'exclude' => [
-        '.git',
-        'deploy.php',
-        'node_modules',
-    ],
-]);
 
 // Servers
 
 server('production', '107.170.63.66')
     ->user('root')
     ->identityFile()
-    ->set('deploy_path', '/var/www/html/michael.php');
+    ->set('deploy_path', '/var/www/html/michael.php')
+    ->set('rsync',[
+        'exclude'      => [
+            '.git',
+            'deploy.php',
+        ],
+        'exclude-file' => false,
+        'include'      => [],
+        'include-file' => false,
+        'filter'       => [],
+        'filter-file'  => false,
+        'filter-perdir'=> false,
+        'flags'        => 'rz', // Recursive, with compress
+        'options'      => ['delete'],
+        'timeout'      => 60,
+    ]);
 
 
 
