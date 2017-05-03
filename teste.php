@@ -1,1 +1,5 @@
-<?php echo 'Ola mundo';
+<?php 
+
+phpinfo();
+
+echo 'Ola mundo';
