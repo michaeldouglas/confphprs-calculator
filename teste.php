@@ -1,5 +1,3 @@
 <?php 
 
-phpinfo();
-
-echo 'Ola mundo';
+echo 'Ola mundo: Gustavo';
