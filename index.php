@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use Php\Phprs\Calculadora\Soma;
+
 ?>
 <!-- CODIGO DO EXEMPLO OBTIDO NO REPOSITORIO: https://gist.github.com/jkuip/43bb6716e0e907f74b49 -->
 <!DOCTYPE html>
@@ -29,19 +31,8 @@ require_once __DIR__ . '/vendor/autoload.php';
             // Calculate total
             if($_POST['operation'] == 'plus')
             {
-                $total = $_POST['number1'] + $_POST['number2'];
-            }
-            if($_POST['operation'] == 'minus')
-            {
-                $total = $_POST['number1'] - $_POST['number2'];
-            }
-            if($_POST['operation'] == 'times')
-            {
-                $total = $_POST['number1'] * $_POST['number2'];
-            }
-            if($_POST['operation'] == 'divided by')
-            {
-                $total = $_POST['number1'] / $_POST['number2'];
+
+                $total = (new Soma)->getResultado($_POST['number1'], $_POST['number2']);
             }
 
             // Print total to the browser
@@ -58,13 +49,10 @@ require_once __DIR__ . '/vendor/autoload.php';
     ?>
 
     <!-- Calculator form -->
-    <form method="post" action="calculator.php">
+    <form method="post" action="index.php">
         <input name="number1" type="text" class="form-control" style="width: 150px; display: inline" />
         <select name="operation">
             <option value="plus">Plus</option>
-            <option value="minus">Minus</option>
-            <option value="times">Times</option>
-            <option value="divided by">Divided By</option>
         </select>
         <input name="number2" type="text" class="form-control" style="width: 150px; display: inline" />
         <input name="submit" type="submit" value="Calculate" class="btn btn-primary" />
