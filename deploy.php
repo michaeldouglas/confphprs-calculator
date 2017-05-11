@@ -71,5 +71,4 @@ task('deploy', [
 
 after('deploy:failed', 'deploy:unlock');
 after('deploy', 'deploy:rollbar');
-after('deploy', 'deploy:slack');
 after('deploy', 'phing');
