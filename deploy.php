@@ -31,7 +31,7 @@ set('rollbar', [
 
 // Slack
 set('slack', [
-    'token' => 'xoxp-176584622293-177310698935-176421134851-a912ffc4ba5cad5449706fe391111fab',
+    'token' => 'xoxp-176584622293-177310698935-183132856038-6a1f64effb28f7c8b310eda181da0eca',
     'team'  => 'confphprs',
     'app'   => 'confphprs',
 ]);
@@ -71,4 +71,5 @@ task('deploy', [
 
 after('deploy:failed', 'deploy:unlock');
 after('deploy', 'deploy:rollbar');
+after('deploy', 'deploy:slack');
 after('deploy', 'phing');
