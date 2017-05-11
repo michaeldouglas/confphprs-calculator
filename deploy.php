@@ -45,7 +45,7 @@ task('local:phpunit', function () {
 // Run PHING
 desc('PHING Task');
 task('phing', function () {
-    run("phing");
+    run("cd /var/www/html/michael.php/current && phing");
 });
 
 after('deploy:update_code', 'npm:install');
@@ -61,7 +61,6 @@ task('deploy', [
     'deploy:shared',
     'deploy:writable',
     'deploy:vendors',
-    'phing',
     'deploy:clear_paths',
     'deploy:symlink',
     'deploy:unlock',
@@ -72,3 +71,4 @@ task('deploy', [
 
 after('deploy:failed', 'deploy:unlock');
 after('deploy', 'deploy:rollbar');
+after('deploy', 'phing');
