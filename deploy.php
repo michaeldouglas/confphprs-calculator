@@ -45,7 +45,7 @@ task('local:phpunit', function () {
 // Run PHING
 desc('PHING Task');
 task('phing', function () {
-    run("php bin/phpunit");
+    run("phing");
 });
 
 after('deploy:update_code', 'npm:install');
@@ -58,6 +58,7 @@ task('deploy', [
     'deploy:lock',
     'deploy:release',
     'deploy:update_code',
+    'phing',
     'deploy:shared',
     'deploy:writable',
     'deploy:vendors',
