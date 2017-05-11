@@ -48,7 +48,15 @@ task('phing', function () {
     run("cd /var/www/html/michael.php/current && phing");
 });
 
+// NPM
 after('deploy:update_code', 'npm:install');
+
+// PHP FPM
+desc('Restart PHP-FPM service');
+task('php-fpm:restart', function () {
+    run('service php7.0-fpm restart');
+});
+
 
 // Tasks
 desc('Deploy your project');
@@ -70,5 +78,6 @@ task('deploy', [
 
 
 after('deploy:failed', 'deploy:unlock');
+after('deploy:symlink', 'php-fpm:restart');
 after('deploy', 'deploy:rollbar');
 after('deploy', 'phing');
