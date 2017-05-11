@@ -1,0 +1,21 @@
+{
+  "name": "confphprs",
+  "description": "confphprs",
+  "main": "index.js",
+  "authors": [
+    "Michael Douglas Barbosa Araujo"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/michaeldouglas/confphprs-calculator",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "*"
+  }
+}

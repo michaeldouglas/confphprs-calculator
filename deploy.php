@@ -24,22 +24,28 @@ server('production', '107.170.63.66')
 
 set('default_stage', 'prod');
 
-// Notices
+// Notices Rollbar
 set('rollbar', [
     'access_token' => "a5a20d133b60417d91f225bdcbd78bb8"
 ]);
 
+// Slack
 set('slack', [
-    'token' => 'xoxp-...',
-    'team'  => 'team name',
-    'app'   => 'app name',
+    'token' => 'xoxp-176584622293-177310698935-176421134851-a912ffc4ba5cad5449706fe391111fab',
+    'team'  => 'confphprs',
+    'app'   => 'confphprs',
 ]);
 
 // Run tests
 desc('Tests project calculator');
-
 task('local:phpunit', function () {
     runLocally("php bin/phpunit");
+});
+
+// Run PHING
+desc('PHING Task');
+task('phing', function () {
+    run("php bin/phpunit");
 });
 
 after('deploy:update_code', 'npm:install');
