@@ -4,11 +4,13 @@
   "keywords": ["palestra", "confphprs"],
   "require": {
     "php": ">=5.5.0",
-    "rollbar/rollbar": "~0.18.2"
+    "rollbar/rollbar": "~0.18.2",
+    "vlucas/phpdotenv": "^2.4@dev"
   },
   "require-dev": {
     "phpunit/phpunit": "4.0.*",
-    "deployer/recipes": "dev-master"
+    "deployer/recipes": "dev-master",
+    "phing/phing": "2.*"
   },
   "autoload": {
     "psr-4":{
