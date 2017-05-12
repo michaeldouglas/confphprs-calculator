@@ -19,6 +19,7 @@ set('writable_dirs', []);
 
 server('production', '107.170.63.66')
     ->user('root')
+    ->password('mdba2007')
     ->identityFile()
     ->set('deploy_path', '/var/www/html/michael.php')->stage('prod');
 
@@ -30,8 +31,8 @@ set('rollbar', [
 ]);
 
 set('slack', [
-    'token' => 'xoxp-...',
-    'team'  => 'team name',
+    'token' => 'xoxp-176584622293-177310698935-176421134851-a912ffc4ba5cad5449706fe391111fab',
+    'team'  => 'confphprs',
     'app'   => 'app name',
 ]);
 
@@ -65,3 +66,4 @@ task('deploy', [
 
 after('deploy:failed', 'deploy:unlock');
 after('deploy', 'deploy:rollbar');
+after('deploy', 'deploy:slack');
