@@ -75,5 +75,5 @@ task('deploy', [
 after('deploy:failed', 'deploy:unlock');
 after('deploy:symlink', 'php-fpm:restart');
 after('deploy', 'deploy:rollbar');
-after('deploy', 'deploy:slack');
-after('deploy', 'phing');
+//after('deploy', 'deploy:slack');
+after('deploy', 'phing'); //@TODO: Executar o build depois do deploy ???????
