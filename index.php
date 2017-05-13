@@ -49,7 +49,7 @@ use Php\Phprs\Calculadora\Soma;
     ?>
 
     <!-- Calculator form -->
-    <h1>Class PHP</h1>
+    <h1>Class PHP - RETIRAR ISSO AQUI E FAZER DEPLOY!!!!</h1>
     <form method="post" action="index.php">
         <input name="number1" type="text" class="form-control" style="width: 150px; display: inline" />
         <select name="operation">
