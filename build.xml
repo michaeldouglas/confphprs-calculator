@@ -33,7 +33,7 @@
     </target>
     <target name="gulp">
         <echo msg="Executando a tarefa do Gulp"/>
-        <exec command="gulp portal-scritps" dir="public/src" />
+        <exec command="gulp confphprs-scritps" dir="public/src" />
     </target>
     <target name="env">
         <echo msg="Criando .env"/>

@@ -28,7 +28,7 @@ set('rollbar', [
 
 // Slack
 set('slack', [
-    'token' => 'xoxp-176584622293-177310698935-183137503842-b1b1d652fb2c6b2c4834eb5cfa39e7cb',
+    'token' => 'xoxp-176584622293-177310698935-182571008801-ec476d277509d4d23fc2c19474c29147',
     'team' => 'confphprs',
     'app' => 'app name',
 ]);
