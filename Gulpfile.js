@@ -3,9 +3,9 @@ var gutil = require('gulp-util');
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 
-gulp.task('portal-scritps', function(){
+gulp.task('confphprs-scritps', function(){
     return gulp
-        .src(['js/**/*.js'])
+        .src(['resources/js/**/*.js'])
         .pipe(uglify())
-        .pipe(gulp.dest('build/js   '));
+        .pipe(gulp.dest('public/src/js'));
 });

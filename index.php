@@ -49,6 +49,7 @@ use Php\Phprs\Calculadora\Soma;
     ?>
 
     <!-- Calculator form -->
+    <h1>Class PHP</h1>
     <form method="post" action="index.php">
         <input name="number1" type="text" class="form-control" style="width: 150px; display: inline" />
         <select name="operation">
@@ -60,5 +61,34 @@ use Php\Phprs\Calculadora\Soma;
 
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>GULP</h1>
+            <form>
+                <div class="form-group">
+                    <label for="CEP">CEP</label>
+                    <input type="text" class="form-control" id="CEP" placeholder="Cep">
+                </div>
+                <div class="form-group">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" class="form-control" id="logradouro" placeholder="Logradouro">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                </div>
+                <div class="form-group">
+                    <label for="localidade">Localidade</label>
+                    <input type="text" class="form-control" id="localidade" placeholder="Localidade">
+                </div>
+                <button type="button" id="buscarEnderecoBTN" class="btn btn-default">Buscar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="public/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/public/src/js/cep.js"></script>
+<script src="/public/src/js/index.js"></script>
 </body>
 </html>
